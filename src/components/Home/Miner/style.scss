@@ -1,0 +1,45 @@
+.centerItems{
+
+  width: 280px;
+  .mineContainer{
+    width:280px;
+    height:280px;
+
+    display:flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content : center ;
+
+    .coin{
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      background: gold;
+      border: none;
+      transition:50ms;
+    }
+
+    .coin:active{
+      opacity:0.7;
+      width:220px;
+      height:220px;
+
+    }
+  }
+
+  .batterySizeBorder{
+
+    border: 1px solid black;
+    border-radius: 3px;
+
+    .batterySizeDisplay{
+      border-radius: 2px;
+      background: green;
+      height: 5px;
+      transition: 0.1s;
+
+    }
+  }
+
+
+}

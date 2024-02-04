@@ -8,19 +8,22 @@ import RedBitcoin from "../assets/img/redBitcoin.png";
 
 const initialState = {
   totalCoins: 0,
-  levelOfClicks: 57,
+  levelOfClicks: 1,
   levelOfBattery: 4000,
   totalBattery: 4000,
-  levelOfCharge: 100,
+  levelOfCharge: 1,
   costForClick: 500,
   costForBattery: 500,
   costForCharge: 500,
   widthOfDiv: 280,
   selectedSkin: YellowBitcoin,
   darkMode: false,
-  skin_1000: "choose"
+  skin_1000: "1000 🪙",
+  skin_2000: "2000 🪙",
+  skin_3000: "3000 🪙",
+  skin_4000: "4000 🪙",
+  skin_5000: "5000 🪙",
 };
-
 setInterval(() => {
   if (store.getState().totalBattery < store.getState().levelOfBattery) {
     store.dispatch({ type: "CHARGE_BATTERY" });
@@ -112,11 +115,13 @@ export const Reducer = (state = initialState, { type }) => {
         widthOfDiv: newWidthOfDiv,
       };
     case "GREEN_COIN":
-      return {
-        ...state,
-        selectedSkin: (state.selectedSkin = GreenBitcoin),
-      };
-
+      if(state.skin_1000 === "Bought ✅") {
+        return {
+          ...state,
+          selectedSkin: GreenBitcoin,
+        }
+      }
+      return state
     case "YELLOW_COIN":
       return {
         ...state,
@@ -124,26 +129,40 @@ export const Reducer = (state = initialState, { type }) => {
       };
 
     case "DEFAULT_COIN":
-      return {
-        ...state,
-        selectedSkin: DefaultBitcoin,
-      };
+      if(state.skin_5000 === "Bought ✅") {
+        return {
+          ...state,
+          selectedSkin: DefaultBitcoin,
+        }
+      }
+      return state
     case "DARK_COIN":
-      return {
-        ...state,
-        selectedSkin: DarkerBitcoin,
-      };
+
+      if(state.skin_2000 === "Bought ✅"){
+        return {
+          ...state,
+          selectedSkin: DarkerBitcoin,
+        };
+      }
+      return state
+
 
     case "BLACK_ORANGE_COIN":
-      return {
-        ...state,
-        selectedSkin: BlackAndOrange,
-      };
+      if(state.skin_3000 === "Bought ✅") {
+        return {
+          ...state,
+          selectedSkin: BlackAndOrange,
+        }
+      }
+      return state
     case "RED_COIN":
-      return {
-        ...state,
-        selectedSkin: RedBitcoin,
-      };
+      if(state.skin_4000 === "Bought ✅") {
+        return {
+          ...state,
+          selectedSkin: RedBitcoin,
+        }
+      }
+      return state
     case "CHANGE_DARK":
       if (!state.darkMode) {
         return {
@@ -157,11 +176,79 @@ export const Reducer = (state = initialState, { type }) => {
         };
       }
 
-    case "SKIN_2000":
-      return{
-        ...state,
+
+    case "SKIN_1000":
+
+      if(state.totalCoins >= 1000 && state.skin_1000 === "1000 🪙") {
+        return {
+          ...state,
+          skin_1000: state.skin_1000 = "Bought ✅",
+          totalCoins: state.totalCoins - 1000
+        }
 
       }
+
+      return state
+
+
+    case "SKIN_2000":
+
+      if(state.totalCoins >= 2000 && state.skin_2000 === "2000 🪙") {
+        return {
+          ...state,
+          skin_2000: state.skin_2000 = "Bought ✅",
+          totalCoins: state.totalCoins - 2000
+        }
+
+      }
+
+      return state
+
+    case "SKIN_3000":
+
+      if(state.totalCoins >= 3000 && state.skin_3000 === "3000 🪙") {
+        return {
+          ...state,
+          skin_3000: state.skin_3000 = "Bought ✅",
+          totalCoins: state.totalCoins - 3000
+        }
+
+      }
+
+      return state
+
+
+    case "SKIN_4000":
+
+      if(state.totalCoins >= 4000 && state.skin_4000 === "4000 🪙") {
+        return {
+          ...state,
+          skin_4000: state.skin_4000 = "Bought ✅",
+          totalCoins: state.totalCoins - 4000
+        }
+
+      }
+
+      return state
+
+
+    case "SKIN_5000":
+
+      if(state.totalCoins >= 5000 && state.skin_5000 === "5000 🪙") {
+        return {
+          ...state,
+          skin_5000: state.skin_5000 = "Bought ✅",
+          totalCoins: state.totalCoins - 5000
+        }
+
+      }
+
+      return state
+
+
+
+
+
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import './App.scss';
-import Hero from "./components/Hero";
 import {useSelector} from "react-redux";
+import Home from "./components/Home";
 
 function App() {
     const darkMode = useSelector(state => state.darkMode)
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App" >
-      <Hero/>
+      <Home/>
     </div>
   );
 }

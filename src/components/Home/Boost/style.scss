@@ -1,0 +1,45 @@
+.button-container{
+  margin: 130px 0 0 0;
+  div{
+    width: 350px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+  }
+
+  .add-click{
+    width: 80px;
+    height: 40px;
+
+    padding: 10px;
+    background: green;
+    border:none ;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .add-battery{
+    width: 80px;
+    height: 40px;
+    color: white;
+    padding: 10px;
+    background: skyblue;
+    border:none ;
+    border-radius: 5px;
+
+  }
+
+  .add-speed{
+    width: 80px;
+    height: 40px;
+    padding: 10px;
+    color: #000000;
+    background: yellow;
+    border:none ;
+    border-radius: 5px;
+  }
+
+
+}
