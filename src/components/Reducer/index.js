@@ -1,15 +1,19 @@
 import {store} from "../store";
+import DefaultBitcoin from "../assets/img/bitcoin.png"
+import YellowBitcoin from "../assets/img/bitcoinSimple.png"
+import GreenBitcoin from "../assets/img/greenBitcoin.png"
 
 const initialState = {
     totalCoins: 0,
-    levelOfClicks: 1,
+    levelOfClicks: 13,
     levelOfBattery: 4000,
     totalBattery: 4000,
-    levelOfCharge: 1,
+    levelOfCharge: 10,
     costForClick: 500,
     costForBattery: 500,
     costForCharge: 500,
     widthOfDiv: 280,
+    selectedSkin : DefaultBitcoin,
 }
 
 
@@ -90,11 +94,36 @@ setInterval(() => {
             return state
 
         case "CHARGE_BATTERY":
+            const newTotalBattery = state.totalBattery + state.levelOfCharge;
+            const newWidthOfDiv =
+                state.widthOfDiv  < 280
+                    ? state.widthOfDiv + (280 / state.levelOfBattery) * state.levelOfCharge
+                    : state.widthOfDiv;
             return {
                 ...state,
-                totalBattery:  state.totalBattery + state.levelOfCharge
+                totalBattery: newTotalBattery,
+                widthOfDiv: newWidthOfDiv,
+            };
+        case "GREEN_COIN":
+            return {
+                ...state,
+                selectedSkin: state.selectedSkin = GreenBitcoin
+            }
+
+        case "YELLOW_COIN":
+            return {
+                ...state,
+                selectedSkin: state.selectedSkin = YellowBitcoin
+            }
+
+        case "DEFAULT_COIN":
+            return{
+                ...state,
+                selectedSkin: DefaultBitcoin
             }
         default:
             return state
     }
 }
+
+

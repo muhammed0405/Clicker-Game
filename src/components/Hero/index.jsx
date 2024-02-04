@@ -1,7 +1,7 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment} from 'react';
 import "./style.scss"
-import Bitcoin from "../assets/img/bitcoin.png"
-import SimpleBitcoin from "../assets/img/bitcoinSimple.png"
+import DefaultBitcoin from "../assets/img/bitcoin.png"
+import YellowBitcoin from "../assets/img/bitcoinSimple.png"
 import GreenBitcoin from "../assets/img/greenBitcoin.png"
 import {useDispatch, useSelector} from "react-redux";
 
@@ -15,23 +15,11 @@ import {useDispatch, useSelector} from "react-redux";
     const costForBattery = useSelector(state => state.costForBattery)
     const costForCharge = useSelector(state => state.costForCharge)
     const levelOfCharge = useSelector(state => state.levelOfCharge)
+    const selectedSkin = useSelector(state => state.selectedSkin)
 
     const dispatch = useDispatch()
-        const [selectedSkin, setSelectedSkin] = useState("default");
-        const handleSkinChange = (skin) => {
-            setSelectedSkin(skin);
-        };
 
-        const getSkinImage = () => {
-            switch (selectedSkin) {
-                case "simple":
-                    return SimpleBitcoin;
-                case "green":
-                    return GreenBitcoin;
-                default:
-                    return Bitcoin;
-            }
-        };
+        console.log(widthOfDiv, "this is from index.js")
     return (
         <>
             <div className="container">
@@ -42,7 +30,7 @@ import {useDispatch, useSelector} from "react-redux";
                         <p className="totalCoinsDisplay">Bitcoins: {totalCoins} 🪙 </p>
                         <p className="levelOfClickerDisplay">Level of Clicker: {levelOfClicks}👆</p>
                         <p className="levelOfBatterDisplay">Level of Battery: {levelOfBattery}🔋</p>
-                        <p className="levelOfSpeedDisplay">Level of Charge: {levelOfCharge}⚡</p>
+                        <p className="levelOfSpeedDisplay">Level of Charge: {levelOfCharge}⚡ </p>
 
                     </div>
 
@@ -57,7 +45,7 @@ import {useDispatch, useSelector} from "react-redux";
                         <div className="mineContainer">
                             <img className="coin" onClick={() => {
                                 dispatch({type: "ADD_COINS"})
-                            }} src={getSkinImage()} alt={"img of bitcoin"}/>
+                            }} src={selectedSkin} alt={"img of bitcoin"}/>
                         </div>
 
 
@@ -68,9 +56,9 @@ import {useDispatch, useSelector} from "react-redux";
 
 
                         <div className="skin-selector">
-                            <button onClick={() => handleSkinChange("default")}><img src={Bitcoin} alt="Bitcoin"/></button>
-                            <button onClick={() => handleSkinChange("simple")}><img src={SimpleBitcoin} alt="simpleBitcoin"/></button>
-                            <button onClick={() => handleSkinChange("green")}><img src={GreenBitcoin} alt="green Bitcoin"/></button>
+                            <button onClick={() => dispatch({type: "DEFAULT_COIN"})}><img src={DefaultBitcoin} alt="Bitcoin"/></button>
+                            <button onClick={() => dispatch({type: "YELLOW_COIN"})}><img src={YellowBitcoin} alt="simpleBitcoin"/></button>
+                            <button onClick={() => dispatch({type: "GREEN_COIN"})}><img src={GreenBitcoin} alt="green Bitcoin"/></button>
                         </div>
 
                     </div>
@@ -79,7 +67,7 @@ import {useDispatch, useSelector} from "react-redux";
                     <div className="button-container">
 
                         <div>
-                            <p className="costOfClickDisplay">Add +1 click for {costForClick} 🪙</p>
+                            <p className="costOfClickDisplay">Add +1👆 click for {costForClick} 🪙</p>
                             <button className="add-click" onClick={() => {
                                 dispatch({type: "ADD_CLICKS"})
                             }}>+1
@@ -87,14 +75,14 @@ import {useDispatch, useSelector} from "react-redux";
                         </div>
 
                         <div>
-                            <p className="costOfBatteryDisplay">Add +500 battery for {costForBattery} 🪙 </p>
+                            <p className="costOfBatteryDisplay">Add +500🔋 battery for {costForBattery} 🪙 </p>
                             <button className="add-battery" onClick={()=>{dispatch({type: "ADD_BATTERY"})}} >+500</button>
 
                         </div>
 
                         <div>
 
-                            <p className="costOfSpeedDisplay">Add +1 charge speed for {costForCharge} 🪙 </p>
+                            <p className="costOfSpeedDisplay">Add +1⚡ charge speed for {costForCharge} 🪙 </p>
                             <button className="add-speed"  onClick={()=>{dispatch({type: "ADD_SPEED"})}}>+1</button>
 
                         </div>
