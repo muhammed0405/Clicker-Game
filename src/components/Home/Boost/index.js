@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import "./style.scss"
 const Boost = () => {
@@ -11,6 +11,9 @@ const Boost = () => {
     const costForCharge = useSelector((state) => state.costForCharge);
 
 
+
+
+
     return (
         <>
             <div
@@ -18,26 +21,26 @@ const Boost = () => {
                 style={{color: darkMode ? "white" : "black", transition: "0.5s"}}
             >
                 <div style={{ transition: "0.5s", borderBottom: darkMode? " 1px solid white" : "1px solid black"}}>
-                    <p className="costOfClickDisplay">Add +1👆 to click</p>
+                    <p className="costOfClickDisplay">Add +1  to click</p>
                     <button
                         className="add-click"
-                        onClick={() => {
-                            dispatch({type: "ADD_CLICKS"});
-                        }}
+                        onClick={() => dispatch({type: 'ADD_CLICKS'})}
                     >
-                        {costForClick} 🪙
+                        {costForClick} $
                     </button>
                 </div>
 
                 <div style={{ transition: "0.5s", borderBottom: darkMode? " 1px solid white" : "1px solid black"}}>
+
                     <p className="costOfBatteryDisplay">Add +500🔋 to battery </p>
+
                     <button
                         className="add-battery"
                         onClick={() => {
                             dispatch({type: "ADD_BATTERY"});
                         }}
                     >
-                        {costForBattery} 🪙
+                        {costForBattery} $
                     </button>
                 </div>
 
@@ -49,7 +52,7 @@ const Boost = () => {
                             dispatch({type: "ADD_SPEED"});
                         }}
                     >
-                        {costForCharge} 🪙
+                        {costForCharge} $
                     </button>
                 </div>
             </div>

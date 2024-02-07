@@ -19,7 +19,7 @@ const Miner = () => {
             >
                 <div className="title">
                     <h1>COIN MINER </h1>
-                    <h2 className="totalCoinsDisplay">{totalCoins} 🪙</h2>
+                    <h2 className="totalCoinsDisplay">{totalCoins} $</h2>
                 </div>
 
                 <div className="mineContainer">
