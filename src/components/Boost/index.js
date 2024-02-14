@@ -13,18 +13,18 @@ const Boost = () => {
 
 
 
-
     return (
-        <>
+        <> 
             <div
                 className="button-container"
                 style={{color: darkMode ? "white" : "black", transition: "0.5s"}}
             >
+            
                 <div style={{ transition: "0.5s", borderBottom: darkMode? " 1px solid white" : "1px solid black"}}>
                     <p className="costOfClickDisplay">Add +1  to click</p>
                     <button
                         className="add-click"
-                        onClick={() => dispatch({type: 'ADD_CLICKS'})}
+                        onClick={() => dispatch({type: 'ADD_CLICKS'}) }
                     >
                         {costForClick} $
                     </button>

@@ -1,8 +1,9 @@
 .button-container{
   margin: 130px 0 0 0;
   div{
-    width: 350px;
+    max-width: 350px;
     padding: 10px;
+    gap: 10px ;
     display: flex;
     align-items: center;
     justify-content: space-between;

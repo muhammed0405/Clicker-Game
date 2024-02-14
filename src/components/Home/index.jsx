@@ -1,11 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./style.scss";
-import InfoAndSkins from "./InfoAndSkins";
+import InfoAndSkins from "../InfoAndSkins";
 import Miner from "./Miner";
-import Boost from "./Boost";
+import Boost from "../Boost";
+
 const Home = () => {
-
-
   return (
     <>
       <div className="container">
@@ -13,8 +12,6 @@ const Home = () => {
           <InfoAndSkins/>
           <Miner/>
           <Boost/>
-
-
         </div>
       </div>
     </>

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import "./style.scss";
-import DarkMode from "../DarkMode/DarkMode";
-import YellowBitcoin from "../../assets/img/bitcoinSimple.png";
-import GreenBitcoin from "../../assets/img/greenBitcoin.jpg";
-import DarkerBitcoin from "../../assets/img/darkerBitcoin.png";
-import BlackAndOrange from "../../assets/img/blackAndOrangeBitcoin.png";
-import RedBitcoin from "../../assets/img/redBitcoin.png";
-import DefaultBitcoin from "../../assets/img/bitcoin.png";
+import DarkMode from "../Home/DarkMode/DarkMode";
+import YellowBitcoin from "../assets/img/bitcoinSimple.png";
+import GreenBitcoin from "../assets/img/greenBitcoin.jpg";
+import DarkerBitcoin from "../assets/img/darkerBitcoin.png";
+import BlackAndOrange from "../assets/img/blackAndOrangeBitcoin.png";
+import RedBitcoin from "../assets/img/redBitcoin.png";
+import DefaultBitcoin from "../assets/img/bitcoin.png";
 import { useDispatch, useSelector } from "react-redux";
 
 const InfoAndSkins = () => {
@@ -45,7 +45,7 @@ const InfoAndSkins = () => {
     <>
       <div
         className="infoOfLevelsDisplay"
-        style={{ color: darkMode ? "white" : "black", transition: "0.5s" }}
+        style={{ color: darkMode ? "white" : "black", transition: "0.5s"  }}
       >
         <DarkMode />
         <p className="totalCoinsDisplay">Bitcoins: {totalCoins} $ </p>

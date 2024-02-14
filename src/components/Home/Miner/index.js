@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import "./style.scss"
 const Miner = () => {
@@ -11,6 +11,23 @@ const Miner = () => {
 
     const dispatch = useDispatch();
 
+
+
+    const [bonus , setBonus ] = useState(false);
+
+    setInterval(()=>{
+
+        if(bonus){
+            setBonus(false)
+        }
+        
+    }, 6000)
+
+    setTimeout(()=>{
+        if(setBonus === false){
+            setBonus(true)
+        }
+    }, 6000)
     return (
         <>
             <div
@@ -21,7 +38,6 @@ const Miner = () => {
                     <h1>COIN MINER </h1>
                     <h2 className="totalCoinsDisplay">{totalCoins} $</h2>
                 </div>
-
                 <div className="mineContainer">
                     <img
                         className="coin"
@@ -32,6 +48,8 @@ const Miner = () => {
                         alt={"img of bitcoin"}
                     />
                 </div>
+
+                {bonus? <button onClick={()=> setBonus(false)}>🚀</button> : ""}
 
                 <h3 className="batteryDisplay"> {totalBattery}🔋</h3>
                 <div className="batterySizeBorder">
