@@ -1,16 +1,13 @@
-import { store } from "../store";
+import { store } from "./store";
 import GoldBitcoin from "../assets/img/bitcoin.png";
 import YellowBitcoin from "../assets/img/bitcoinSimple.png";
 import GreenBitcoin from "../assets/img/greenBitcoin.jpg";
 import DarkerBitcoin from "../assets/img/darkerBitcoin.png";
 import BlackAndOrange from "../assets/img/blackAndOrangeBitcoin.png";
 import RedBitcoin from "../assets/img/redBitcoin.png";
-import LevelUp from "../assets/sound/LevelUpShort.mp3"
-import CoinsSound from "../assets/sound/coins.wav"
+import LevelUp from "../assets/sound/LevelUpShort.mp3";
 
- const audio = new Audio(LevelUp)
- const coinAudin = new Audio(CoinsSound)
-
+const audio = new Audio(LevelUp);
 
 const initialState = {
   totalCoins: 1000,
@@ -54,12 +51,10 @@ setInterval(() => {
   }
 }, 500);
 
-
 export const Reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_COINS":
       if (state.totalBattery >= state.levelOfClicks) {
-        coinAudin.play()
         return {
           ...state,
           totalCoins: state.totalCoins + state.levelOfClicks,
@@ -69,7 +64,7 @@ export const Reducer = (state = initialState, action) => {
             (state.widthOfDiv / state.totalBattery) * state.levelOfClicks,
         };
       } else {
-        coinAudin.play()
+
         return {
           ...state,
           totalCoins: Math.min(
@@ -80,11 +75,11 @@ export const Reducer = (state = initialState, action) => {
           totalBattery: 0,
         };
       }
+      break;
+
     case "ADD_CLICKS":
       if (state.totalCoins >= state.costForClick) {
-        
-        audio.play()
-
+        audio.play();
 
         return {
           ...state,
@@ -93,16 +88,13 @@ export const Reducer = (state = initialState, action) => {
           costForClick: state.costForClick * 2,
           addedClicks: true,
         };
-
-        
-      
       }
-      
+
       return state;
 
     case "ADD_BATTERY":
       if (state.totalCoins >= state.costForBattery) {
-        audio.play()
+        audio.play();
         return {
           ...state,
           levelOfBattery: state.levelOfBattery + 500,
@@ -115,7 +107,7 @@ export const Reducer = (state = initialState, action) => {
 
     case "ADD_SPEED":
       if (state.totalCoins >= state.costForCharge) {
-        audio.play()
+        audio.play();
         return {
           ...state,
           levelOfCharge: state.levelOfCharge + 1,
@@ -136,10 +128,18 @@ export const Reducer = (state = initialState, action) => {
       };
 
     case "CHARGE_BATTERY":
-      if (state.totalBattery + state.levelOfCharge <= state.levelOfBattery) {
+      if (state.totalBattery <= state.levelOfBattery) {
         return {
           ...state,
           totalBattery: state.totalBattery + state.levelOfCharge,
+        };
+      } else if (
+        state.totalBattery + state.levelOfCharge >
+        state.levelOfBattery
+      ) {
+        return {
+          ...state,
+          totalBattery: state.totalBattery = state.levelOfBattery
         };
       } else if (state.widthOfDiv < 280) {
         return {

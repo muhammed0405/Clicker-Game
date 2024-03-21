@@ -28,6 +28,7 @@ const InfoAndSkins = () => {
 
   const dispatch = useDispatch();
 
+  // show emoji that you boosted
   useEffect(() => {
     let timeoutId;
 
@@ -39,16 +40,16 @@ const InfoAndSkins = () => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [addedSpeed, addedBattery, addedClicks, dispatch]);
+  }, [addedSpeed, addedBattery, addedClicks]);
 
   return (
     <>
       <div
         className="infoOfLevelsDisplay"
-        style={{ color: darkMode ? "white" : "black", transition: "0.5s"  }}
+        style={{ color: darkMode ? "white" : "black", transition: "0.5s" }}
       >
         <DarkMode />
-        <p className="totalCoinsDisplay">Bitcoins: {totalCoins} $ </p>
+        <p className="totalCoinsDisplay">Balance: {totalCoins} $ </p>
         <p className="levelOfClickerDisplay">
           Level of Clicker: {levelOfClicks}👆{" "}
           <span>{addedClicks ? "+1 👆" : ""}</span>
@@ -95,6 +96,7 @@ const InfoAndSkins = () => {
             </button>
 
             <button
+              disabled={skin_2000 < totalCoins}
               className="buySkinButton"
               onClick={() => dispatch({ type: "SKIN_2000" })}
             >

@@ -1,54 +1,55 @@
-.infoOfLevelsDisplay{
+.infoOfLevelsDisplay {
   display: flex;
   flex-direction: column;
   align-items: start;
   margin: 130px 0 0 0;
 
-
-  span{
+  span {
     opacity: 1;
     color: green;
     transition: 0.5s;
   }
 
-  h1{
+  h1 {
     margin: 40px 0 20px 0;
   }
-  .skin-selector{
+  .skin-selector {
     width: 340px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 
-
-    div{
+    div {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px
+      gap: 5px;
     }
 
-
-    img{
+    img {
       width: 80px;
       border-radius: 50%;
     }
 
-    .buySkinButton{
+    .buySkinButton {
       width: 95px;
       height: 30px;
-      padding: 5px ;
+      padding: 5px;
       background: lightcoral;
       color: whitesmoke;
       border: none;
       border-radius: 5px;
     }
 
-    button{
+    button {
       background: none;
       border: 2px solid lightgreen;
       border-radius: 5px;
+      transition: 0.5s;
+    }
+
+    button:hover {
+      scale: 1.05;
     }
   }
-
 }
