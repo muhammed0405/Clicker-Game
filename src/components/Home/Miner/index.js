@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import "./style.scss"
 const Miner = () => {
@@ -26,10 +26,6 @@ const Miner = () => {
 			setBonus(true)
 		}
 	}, 6000)
-
-	useEffect(() => {
-		console.log("widthOfDiv", widthOfDiv)
-	}, [widthOfDiv])
 
 	return (
 		<>

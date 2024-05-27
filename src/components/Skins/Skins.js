@@ -1,5 +1,6 @@
 /** @format */
 
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import RealBitcoin from "../assets/img/bitcoin.png"
@@ -18,11 +19,17 @@ const Skins = () => {
 		skin_3000,
 		skin_4000,
 		skin_5000,
+		selectedSkinName,
 	} = useSelector(state => state)
 
 	const dispatch = useDispatch()
 
 	const navigate = useNavigate()
+
+	useEffect(() => {
+		console.log("selectedSkinName", selectedSkinName)
+		console.log(selectedSkinName === "GreenBitcoin")
+	}, [selectedSkinName])
 
 	return (
 		<div
@@ -35,7 +42,15 @@ const Skins = () => {
 			<h1 className="hide__total__coins">{totalCoins}$</h1>
 			<div className="skin-selector">
 				<div>
-					<button onClick={() => dispatch({ type: "YELLOW_COIN" })}>
+					<button
+						style={{
+							border:
+								selectedSkinName === "BitcoinSimple"
+									? "3px solid lightgreen"
+									: "3px solid red",
+						}}
+						onClick={() => dispatch({ type: "YELLOW_COIN" })}
+					>
 						<img src={BitcoinSimple} alt="simpleBitcoin" />
 					</button>
 
@@ -51,21 +66,15 @@ const Skins = () => {
 					<button
 						style={{
 							border:
-								skin_1000 === "1000 $"
-									? "2px solid red"
-									: "2px solid lightgreen",
+								selectedSkinName === "GreenBitcoin"
+									? "3px solid lightgreen"
+									: "3px solid red",
 						}}
 						onClick={() => dispatch({ type: "GREEN_COIN" })}
 					>
 						<img src={GreenBitcoin} alt="green Bitcoin" />
 					</button>
 					<button
-						style={{
-							border:
-								skin_1000 === "1000 $"
-									? "2px solid red"
-									: "2px solid lightgreen",
-						}}
 						className="buySkinButton"
 						onClick={() => dispatch({ type: "SKIN_1000" })}
 					>
@@ -77,9 +86,9 @@ const Skins = () => {
 					<button
 						style={{
 							border:
-								skin_2000 === "2000 $"
-									? "2px solid red"
-									: "2px solid lightgreen",
+								selectedSkinName === "DarkerBitcoin"
+									? "3px solid lightgreen"
+									: "3px solid red",
 						}}
 						onClick={() => dispatch({ type: "DARK_COIN" })}
 					>
@@ -99,9 +108,9 @@ const Skins = () => {
 					<button
 						style={{
 							border:
-								skin_3000 === "3000 $"
-									? "2px solid red"
-									: "2px solid lightgreen",
+								selectedSkinName === "BlackAndOrange"
+									? "3px solid lightgreen"
+									: "3px solid red",
 						}}
 						onClick={() => dispatch({ type: "BLACK_ORANGE_COIN" })}
 					>
@@ -120,9 +129,9 @@ const Skins = () => {
 					<button
 						style={{
 							border:
-								skin_4000 === "4000 $"
-									? "2px solid red"
-									: "2px solid lightgreen",
+								selectedSkinName === "RedBitcoin"
+									? "3px solid lightgreen"
+									: "3px solid red",
 						}}
 						onClick={() => dispatch({ type: "RED_COIN" })}
 					>
@@ -141,9 +150,9 @@ const Skins = () => {
 					<button
 						style={{
 							border:
-								skin_5000 === "5000 $"
-									? "2px solid red"
-									: "2px solid lightgreen",
+								selectedSkinName === "RealBitcoin"
+									? "3px solid lightgreen"
+									: "3px solid red",
 						}}
 						onClick={() => dispatch({ type: "DEFAULT_COIN" })}
 					>

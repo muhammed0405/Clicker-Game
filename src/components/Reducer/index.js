@@ -1,7 +1,7 @@
 /** @format */
 
-import GoldBitcoin from "../assets/img/bitcoin.png"
-import YellowBitcoin from "../assets/img/bitcoinSimple.png"
+import RealBitcoin from "../assets/img/bitcoin.png"
+import BitcoinSimple from "../assets/img/bitcoinSimple.png"
 import BlackAndOrange from "../assets/img/blackAndOrangeBitcoin.png"
 import DarkerBitcoin from "../assets/img/darkerBitcoin.png"
 import GreenBitcoin from "../assets/img/greenBitcoin.jpg"
@@ -25,8 +25,8 @@ const initialState = {
 
 	widthOfDiv: 280,
 
-	selectedSkin: YellowBitcoin,
-
+	selectedSkin: BitcoinSimple,
+	selectedSkinName: "BitcoinSimple",
 	darkMode: false,
 
 	addedClicks: false,
@@ -150,20 +150,23 @@ export const Reducer = (state = initialState, action) => {
 				return {
 					...state,
 					selectedSkin: GreenBitcoin,
+					selectedSkinName: "GreenBitcoin",
 				}
 			}
 			return state
 		case "YELLOW_COIN":
 			return {
 				...state,
-				selectedSkin: (state.selectedSkin = YellowBitcoin),
+				selectedSkin: (state.selectedSkin = BitcoinSimple),
+				selectedSkinName: "BitcoinSimple",
 			}
 
 		case "DEFAULT_COIN":
 			if (state.skin_5000 === "Bought ✅") {
 				return {
 					...state,
-					selectedSkin: GoldBitcoin,
+					selectedSkin: RealBitcoin,
+					selectedSkinName: "RealBitcoin",
 				}
 			}
 			return state
@@ -172,6 +175,7 @@ export const Reducer = (state = initialState, action) => {
 				return {
 					...state,
 					selectedSkin: DarkerBitcoin,
+					selectedSkinName: "DarkerBitcoin",
 				}
 			}
 			return state
@@ -181,6 +185,7 @@ export const Reducer = (state = initialState, action) => {
 				return {
 					...state,
 					selectedSkin: BlackAndOrange,
+					selectedSkinName: "BlackAndOrange",
 				}
 			}
 			return state
@@ -189,6 +194,7 @@ export const Reducer = (state = initialState, action) => {
 				return {
 					...state,
 					selectedSkin: RedBitcoin,
+					selectedSkinName: "RedBitcoin",
 				}
 			}
 			return state
@@ -209,7 +215,8 @@ export const Reducer = (state = initialState, action) => {
 			if (state.skin_free === "Bought ✅") {
 				return {
 					...state,
-					selectedSkin: (state.selectedSkin = YellowBitcoin),
+					selectedSkin: (state.selectedSkin = BitcoinSimple),
+					selectedSkinName: "BitcoinSimple",
 				}
 			}
 			return state
@@ -288,7 +295,7 @@ export const Reducer = (state = initialState, action) => {
 			} else if (state.skin_5000 === "Bought ✅") {
 				return {
 					...state,
-					selectedSkin: (state.selectedSkin = GoldBitcoin),
+					selectedSkin: (state.selectedSkin = RealBitcoin),
 				}
 			}
 
