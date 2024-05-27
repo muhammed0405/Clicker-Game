@@ -22,7 +22,7 @@ const Boost = () => {
 				className="button-container"
 				style={{ color: darkMode ? "white" : "black", transition: "0.5s" }}
 			>
-				<h1>{totalCoins}$</h1>
+				<h1 className="hide__total__coins">{totalCoins}$</h1>
 				<div
 					style={{
 						transition: "0.5s",

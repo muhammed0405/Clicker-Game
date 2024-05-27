@@ -35,7 +35,7 @@ const Miner = () => {
 			>
 				<div className="title">
 					<h1>COIN MINER </h1>
-					<div className="miner__info">
+					<div className="miner__info ">
 						<p>
 							<bold>+{levelOfClicks}$</bold> per 👆
 						</p>

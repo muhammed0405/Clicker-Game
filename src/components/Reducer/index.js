@@ -15,7 +15,7 @@ const initialState = {
 	totalCoins: 1000,
 	totalBattery: 4000,
 
-	levelOfClicks: 57,
+	levelOfClicks: 50,
 	levelOfBattery: 4000,
 	levelOfCharge: 10,
 

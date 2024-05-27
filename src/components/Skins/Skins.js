@@ -32,7 +32,7 @@ const Skins = () => {
 			}}
 		>
 			<h1>Choose your skin</h1>
-			<h1>{totalCoins}$</h1>
+			<h1 className="hide__total__coins">{totalCoins}$</h1>
 			<div className="skin-selector">
 				<div>
 					<button onClick={() => dispatch({ type: "YELLOW_COIN" })}>
