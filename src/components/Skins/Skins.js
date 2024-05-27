@@ -48,10 +48,24 @@ const Skins = () => {
 				</div>
 
 				<div>
-					<button onClick={() => dispatch({ type: "GREEN_COIN" })}>
+					<button
+						style={{
+							border:
+								skin_1000 === "1000 $"
+									? "2px solid red"
+									: "2px solid lightgreen",
+						}}
+						onClick={() => dispatch({ type: "GREEN_COIN" })}
+					>
 						<img src={GreenBitcoin} alt="green Bitcoin" />
 					</button>
 					<button
+						style={{
+							border:
+								skin_1000 === "1000 $"
+									? "2px solid red"
+									: "2px solid lightgreen",
+						}}
 						className="buySkinButton"
 						onClick={() => dispatch({ type: "SKIN_1000" })}
 					>
@@ -60,7 +74,15 @@ const Skins = () => {
 				</div>
 
 				<div>
-					<button onClick={() => dispatch({ type: "DARK_COIN" })}>
+					<button
+						style={{
+							border:
+								skin_2000 === "2000 $"
+									? "2px solid red"
+									: "2px solid lightgreen",
+						}}
+						onClick={() => dispatch({ type: "DARK_COIN" })}
+					>
 						<img src={DarkerBitcoin} alt="dark Bitcoin" />
 					</button>
 
@@ -74,7 +96,15 @@ const Skins = () => {
 				</div>
 
 				<div>
-					<button onClick={() => dispatch({ type: "BLACK_ORANGE_COIN" })}>
+					<button
+						style={{
+							border:
+								skin_3000 === "3000 $"
+									? "2px solid red"
+									: "2px solid lightgreen",
+						}}
+						onClick={() => dispatch({ type: "BLACK_ORANGE_COIN" })}
+					>
 						<img src={BlackAndOrange} alt="black and orange Bitcoin" />
 					</button>
 
@@ -87,7 +117,15 @@ const Skins = () => {
 				</div>
 
 				<div>
-					<button onClick={() => dispatch({ type: "RED_COIN" })}>
+					<button
+						style={{
+							border:
+								skin_4000 === "4000 $"
+									? "2px solid red"
+									: "2px solid lightgreen",
+						}}
+						onClick={() => dispatch({ type: "RED_COIN" })}
+					>
 						<img src={RedBitcoin} alt="red Bitcoin" />
 					</button>
 
@@ -100,7 +138,15 @@ const Skins = () => {
 				</div>
 
 				<div>
-					<button onClick={() => dispatch({ type: "DEFAULT_COIN" })}>
+					<button
+						style={{
+							border:
+								skin_5000 === "5000 $"
+									? "2px solid red"
+									: "2px solid lightgreen",
+						}}
+						onClick={() => dispatch({ type: "DEFAULT_COIN" })}
+					>
 						<img src={RealBitcoin} alt="Bitcoin" />
 					</button>
 

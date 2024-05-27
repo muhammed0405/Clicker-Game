@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import "./style.scss"
 const Miner = () => {
@@ -27,6 +27,10 @@ const Miner = () => {
 		}
 	}, 6000)
 
+	useEffect(() => {
+		console.log("widthOfDiv", widthOfDiv)
+	}, [widthOfDiv])
+
 	return (
 		<>
 			<div
@@ -37,7 +41,7 @@ const Miner = () => {
 					<h1>COIN MINER </h1>
 					<div className="miner__info ">
 						<p>
-							<bold>+{levelOfClicks}$</bold> per 👆
+							<b>+{levelOfClicks}$</b> per 👆
 						</p>
 						<h2 className="totalCoinsDisplay">{totalCoins} $</h2>
 						<p>+{levelOfCharge} ⚡</p>

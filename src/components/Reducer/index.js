@@ -17,7 +17,7 @@ const initialState = {
 
 	levelOfClicks: 50,
 	levelOfBattery: 4000,
-	levelOfCharge: 10,
+	levelOfCharge: 30,
 
 	costForClick: 500,
 	costForBattery: 500,
@@ -131,27 +131,17 @@ export const Reducer = (state = initialState, action) => {
 			}
 
 		case "CHARGE_BATTERY":
-			if (state.totalBattery <= state.levelOfBattery) {
+			// If the battery is not fully charged, charge it
+			if (state.totalBattery + state.levelOfCharge <= state.levelOfBattery) {
 				return {
 					...state,
 					totalBattery: state.totalBattery + state.levelOfCharge,
-				}
-			} else if (
-				state.totalBattery + state.levelOfCharge >
-				state.levelOfBattery
-			) {
-				return {
-					...state,
-					totalBattery: (state.totalBattery = state.levelOfBattery),
-				}
-			} else if (state.widthOfDiv < 280) {
-				return {
-					...state,
 					widthOfDiv:
 						state.widthOfDiv +
 						(280 / state.levelOfBattery) * state.levelOfCharge,
 				}
 			}
+			// If the charge would exceed the battery level, set it to max
 			return state
 
 		// from here is to chose skins
