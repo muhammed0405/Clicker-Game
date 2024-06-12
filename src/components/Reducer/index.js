@@ -1,11 +1,11 @@
 /** @format */
 
-import RealBitcoin from "../assets/img/bitcoin.png"
-import BitcoinSimple from "../assets/img/bitcoinSimple.png"
-import BlackAndOrange from "../assets/img/blackAndOrangeBitcoin.png"
-import DarkerBitcoin from "../assets/img/darkerBitcoin.png"
-import GreenBitcoin from "../assets/img/greenBitcoin.jpg"
-import RedBitcoin from "../assets/img/redBitcoin.png"
+import RealBitcoin from "../assets/img/bitcoin.webp"
+import BitcoinSimple from "../assets/img/bitcoinSimple.webp"
+import BlackAndOrange from "../assets/img/blackAndOrangeBitcoin.webp"
+import DarkerBitcoin from "../assets/img/darkerBitcoin.webp"
+import GreenBitcoin from "../assets/img/greenBitcoin.webp"
+import RedBitcoin from "../assets/img/redBitcoin.webp"
 import LevelUp from "../assets/sound/LevelUpShort.mp3"
 import { store } from "./store"
 

@@ -3,12 +3,12 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import RealBitcoin from "../assets/img/bitcoin.png"
-import BitcoinSimple from "../assets/img/bitcoinSimple.png"
-import BlackAndOrange from "../assets/img/blackAndOrangeBitcoin.png"
-import DarkerBitcoin from "../assets/img/darkerBitcoin.png"
-import GreenBitcoin from "../assets/img/greenBitcoin.jpg"
-import RedBitcoin from "../assets/img/redBitcoin.png"
+import RealBitcoin from "../assets/img/bitcoin.webp"
+import BitcoinSimple from "../assets/img/bitcoinSimple.webp"
+import BlackAndOrange from "../assets/img/blackAndOrangeBitcoin.webp"
+import DarkerBitcoin from "../assets/img/darkerBitcoin.webp"
+import GreenBitcoin from "../assets/img/greenBitcoin.webp"
+import RedBitcoin from "../assets/img/redBitcoin.webp"
 import "./style.scss"
 const Skins = () => {
 	const {
@@ -103,7 +103,6 @@ const Skins = () => {
 						{skin_2000}
 					</button>
 				</div>
-
 				<div>
 					<button
 						style={{
