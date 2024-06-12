@@ -55,7 +55,7 @@ const Info = () => {
 				</p>
 
 				<button className="navigate__home__btn" onClick={() => navigate("/")}>
-					Go back
+					Go back {"<"}
 				</button>
 			</div>
 		</>

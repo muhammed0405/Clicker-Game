@@ -7,29 +7,35 @@
 	.hero {
 		display: flex;
 		justify-content: space-around;
-		flex-wrap: wrap;
 
-		@media screen and (max-width: 500px) {
+		@media screen and (max-width: 1020px) {
+			&__mobile__hide {
+				display: none;
+			}
 		}
 	}
 
 	.hero__mobile {
 		display: grid;
 		place-items: center;
-
 		&__nav {
-			display: flex;
+			display: none;
+		}
+		@media screen and (max-width: 1020px) {
+			&__nav {
+				display: flex;
 
-			justify-content: space-around;
-			align-items: center;
-			min-width: 320px;
+				justify-content: space-around;
+				align-items: center;
+				min-width: 320px;
+			}
 			padding: 20px 0;
 
-			button{
+			button {
 				padding: 10px 20px;
-        margin: 0 10px;
-        border: none;
-        border-radius: 5px;
+				margin: 0 10px;
+				border: none;
+				border-radius: 5px;
 				font-size: 20px;
 			}
 		}
